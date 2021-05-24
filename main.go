@@ -4,9 +4,9 @@ import (
 	"math"
 )
 
-const Pi_2 float64 = math.Pi / 2
-const Pi_4 float64 = math.Pi / 4
-const Epsilon float64 = float64(7.)/3 - float64(4.)/3 - float64(1.)
+const pi_2 float64 = math.Pi / 2
+const pi_4 float64 = math.Pi / 4
+const epsilon float64 = float64(7.)/3 - float64(4.)/3 - float64(1.)
 
 func ToRadians(degrees float64) float64 {
 	return degrees * math.Pi / 180.0

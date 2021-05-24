@@ -8,11 +8,11 @@ type Vec2 struct {
 }
 
 func (v *Vec2) IsZero() bool {
-	return math.Abs(v.X) < Epsilon && math.Abs(v.Y) < Epsilon
+	return math.Abs(v.X) < epsilon && math.Abs(v.Y) < epsilon
 }
 
 func (v *Vec2) IsEqual(v2 *Vec2) bool {
-	return math.Abs(v.X-v2.X) < Epsilon && math.Abs(v.Y-v2.Y) < Epsilon
+	return math.Abs(v.X-v2.X) < epsilon && math.Abs(v.Y-v2.Y) < epsilon
 }
 
 func (v *Vec2) Zero() {
