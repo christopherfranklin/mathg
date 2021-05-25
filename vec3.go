@@ -120,6 +120,10 @@ func (v *Vec3) Magnitude() float64 {
 	return math.Sqrt(math.Pow(v.X, 2) + math.Pow(v.Y, 2) + math.Pow(v.Z, 2))
 }
 
+func (v *Vec3) LengthSquared() float64 {
+	return math.Pow(v.X, 2) + math.Pow(v.Y, 2) + math.Pow(v.Z, 2)
+}
+
 func (v *Vec3) Normalize() *Vec3 {
 	m := v.Magnitude()
 	return &Vec3{v.X / m, v.Y / m, v.Z / m}
