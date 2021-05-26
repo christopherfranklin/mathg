@@ -7,6 +7,8 @@ import (
 	"github.com/christopherfranklin/mathg"
 )
 
+const epsilon float64 = float64(7.)/3 - float64(4.)/3 - float64(1.)
+
 func TestToRadians(t *testing.T) {
 	deg := 180.0
 	rad := mathg.ToRadians(deg)
@@ -19,27 +21,6 @@ func TestToDegrees(t *testing.T) {
 	deg := mathg.ToDegrees(math.Pi)
 	if deg != 180.0 {
 		t.Fatalf(`ToDegrees(%f) = %f`, math.Pi, deg)
-	}
-}
-
-func TestClampiMax(t *testing.T) {
-	val := mathg.Clampi(50, 10, 20)
-	if val != 20 {
-		t.Fatal("Clampi max failed")
-	}
-}
-
-func TestClampiMin(t *testing.T) {
-	val := mathg.Clampi(5, 10, 20)
-	if val != 10 {
-		t.Fatal("Clampi min failed")
-	}
-}
-
-func TestClampiVal(t *testing.T) {
-	val := mathg.Clampi(30, 10, 50)
-	if val != 30 {
-		t.Fatal("Clampi value failed")
 	}
 }
 
@@ -58,8 +39,20 @@ func TestClampMin(t *testing.T) {
 }
 
 func TestClampVal(t *testing.T) {
-	val := mathg.Clampi(30.0, 10.0, 50.0)
+	val := mathg.Clamp(30.0, 10.0, 50.0)
 	if val != 30.0 {
 		t.Fatal("Clamp value failed")
+	}
+}
+
+func TestEqual(t *testing.T) {
+	if !mathg.NearlyEqual(0., 0., epsilon) {
+		t.Fatal("Values are not equal")
+	}
+}
+
+func TestNotEqual(t *testing.T) {
+	if mathg.NearlyEqual(0., 0.00000001, epsilon) {
+		t.Fatal("Values are equal")
 	}
 }

@@ -5,7 +5,6 @@ import (
 )
 
 const pi_2 float64 = math.Pi / 2
-const pi_4 float64 = math.Pi / 4
 const epsilon float64 = float64(7.)/3 - float64(4.)/3 - float64(1.)
 
 func ToRadians(degrees float64) float64 {
@@ -17,15 +16,6 @@ func ToDegrees(radians float64) float64 {
 }
 
 func Clamp(value float64, min float64, max float64) float64 {
-	if value < min {
-		value = min
-	} else if value > max {
-		value = max
-	}
-	return value
-}
-
-func Clampi(value int, min int, max int) int {
 	if value < min {
 		value = min
 	} else if value > max {

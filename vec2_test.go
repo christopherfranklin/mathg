@@ -26,3 +26,11 @@ func TestIsZero(t *testing.T) {
 		t.Fatal("Vec2 IsZero failed")
 	}
 }
+
+func TestZeroOut(t *testing.T) {
+	v := mathg.Vec2{1.0, 2.0}
+	v.Zero()
+	if v.IsZero() != true {
+		t.Fatal("Vec2 Zero failed")
+	}
+}
