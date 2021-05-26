@@ -2,6 +2,10 @@ package mathg
 
 import "math"
 
+/*
+m11 m12
+m21 m22
+*/
 type Mat2 struct {
 	M11 float64
 	M21 float64
